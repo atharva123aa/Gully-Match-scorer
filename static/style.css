@@ -1,6 +1,7 @@
 body{
     font-family: Verdana,sans-serif;
-    max-width:696px; margin:39px auto; padding:0 21px; background:#e2e5ed; }h1{ font-size:24px; 
+    max-width:696px; margin:39px auto; padding:0 21px; background-image:url('/static/bg.jpg'); 
+    background-size:cover; background-attachment:fixed;}h1{ font-size:24px; 
         margin-bottom:11px;} .total{ font-size:22px; font-weight:bold; margin:15px 0 21px; color:#222;} .add-box{margin-bottom: 21px;} input[type="number"] {padding:6px 11px; font-size:16px; border:  1px solid #ccc; border-radius:4px;} button{padding:7px 14px 
             ; font-size: 13px; cursor:pointer 
             ; background:#221; 
@@ -11,8 +12,7 @@ body{
 
 
               /*todo add a special boll sec. too
-*/
-
+*/ 
 
 
 .runs{ font-weight: bold; font-size:18px;}
@@ -20,8 +20,20 @@ button.remove{ background:#c0392b;} button.remove:hover { background:#e73c3c;} .
 /* agresion*/
 button.factoryreset-btn{ background:none; color:#887; border:1px solid #ccc; }
 button.factoryreset-btn:hover {color:#c0392b;border-color:#c0392b ; background :none;} 
-              .empty{color:#887; margin-top: 21px; font-size:14px;} /*My boys have phone ly so a responsive thingy for them*/ 
-              @media(max-width:599px;){ body{ margin:20px auto; 
+              .empty{color:#333; margin-top: 21px; font-size:14px; background:rgba(255,255,255,0.85); padding:11px;
+            border-radius:6px;
+        } /*My boys have phone ly so a responsive thingy for them*/ 
+              .add-box,  table,.total, .factoryreset {
+ background:rgba(255,255,255,0.85); border-radius:6px; 
+  padding:11px 
+  ;
+              } .add-box p{ margin-top:8px; font-size:14px; color:#333;}         
+              
+              
+              @media(max-width:599px){ body{ margin:20px auto; 
                 padding: 0 12px;   } 
-                /*no worth of ball col. on small screen*/ th:nth-child(3),td:nth-child(3){ display:none;} input[type="text"] input[type="number"]{ width:100%; margin-bottom:6px;} button{width:  100%;} table {
-                    font-size:  13px;}td,th {padding:8px 6px;}
+                /*no worth of ball col. on small screen*/ th:nth-child(3),td:nth-child(3){ display:none;} input[type="text"], input[type="number"]{ width:100%; margin-bottom:6px;} button{width:  100%;} table {
+                    font-size:  13px;}td,th {padding:8px 6px;} 
+
+
+                }
