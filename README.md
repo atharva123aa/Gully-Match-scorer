@@ -36,13 +36,13 @@ Just open the link and watch this video for info btw! that much i think you shou
 
 
 
-[![Scorer - How to Use](https://img.youtube.com/vi/9DVuNIcMTrU/0.jpg)](https://youtu.be/gLidM3Sz1UM)
+[![Scorer - How to Use](dashboard.png)](https://youtu.be/gLidM3Sz1UM)
 
 
 
 
 
-![Dashboard](static/dashboard.png)
+![Dashboard](dashboard.png)
 
 
 
