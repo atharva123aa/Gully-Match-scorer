@@ -1,28 +1,44 @@
 <html>
-    <head><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GMC!</title</head>
+    <head><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GMC!</title>
     <LINK REL="stylesheet" href="/static/style.css"></head><body><h1>Gully Match<strong>Scorer</strong></h1>
          <div  class="total">
             Team score:{{ total }} 
-         </div> <!--7 53--> <div class="add-box"> <form action="/add_player"method="POST"><input type="text" name="name"
+         </div> <div class="add-box"> <form action="/set_bowler" method="POST">
+            <INPUT TYPE="text" name="name" placeholder="bowler naam"><button>
+                SET BOWLER</BUTTON></FORM>
+
+{% if bowler['name'] %}
+<p>BOWLING: <STRONG>{{ bowler['name'] }}</strong> - {{ bowler['balls'] }}/6 balls</p> 
+    {% if bowler['balls'] >= 6 %}
+<p style ="color:red ; font-weight: bold;">done over,change</p>
+{% endif %}
+{% endif %}</div>
+
+
+
+
+         
+         <div class="add-box"> <form action="/join_player"method="POST"><input type="text" name="name"
              placeholder="player naam"><button>ADD</BUTTON></FORM></DIV> 
                 {% if players %}
                 <table><tr> 
         <TH>Name</TH>
         <TH>RUN</TH>
+        <TH>BALLS</TH>
             <TH>ADD ++</TH>
                 <TH>REMOVE --</TH></tr>
 
 
-                {% for p in players %}<tr> 
+                {% for p in players %}<tr> <td> {{ p.name }}</td>
                     <td class="runs">{{ p.runs }}
                     </td><Td>{{ p.balls }}</td><td>
-<form action="/add_runs" method="POST">
-    <INPUT TYPE="hiddden"name="name" value ="{{ p.name }}"><input type="number"
-        name="runs" min="0" max="6" placeholder="0-6"><!--in our gully there a rule in which aperson if we hit out of park its a 10run i think they will scoll me for that--><button>+ </button></form></TD><TD><FORM ACTION="/remove"  method="POST"><INPUT TYPE="hidden" name="name" value="{{ p.name }}">
+<form action="/score_run" method="POST">
+    <INPUT TYPE="hidden"name="name" value ="{{ p.name }}"><input type="number"
+        name="runs" min="0" max="6" placeholder="0-6"><!--in our gully there a rule in which aperson if we hit out of park its a 10run i think they will scoll me for that--><button>+ </button></form></TD><TD><FORM ACTION="/out"  method="POST"><INPUT TYPE="hidden" name="name" value="{{ p.name }}">
             <button class="remove">OUT</BUTTON> </FORM></TD></TR>
                 {% endfor %} </table>
                 <div class="factoryreset">
-                    <form action="/reset" method="POST">
+                    <form action="/factoryreset" method="POST">
                         <button class="reset-btn" onclick ="return confirm('start newly;')">RESET MATCH</BUTTON></FORM></DIV> 
                         {% else %} 
                         <p  class="empty">No player,You cant play alone</p>
